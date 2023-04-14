@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SAE 401{% endblock %}
+
+{% block body %}
+
+<header>
+    <h1>SAE 401</h1>
+    <nav>
+        <a href="{{ path('app_compte')}}" class="btn btn-primary">Compte</a>
+        <a href="{{ path('app_login')}}" class="btn btn-primary">Compte</a>
+    </nav>
+</header>
+
+
+<main>
+    <h2>Partie publique</h2>
+    {% for partie in user.parties %}
+    <div>
+        <p>{{ partie.datedebut|date('d/m/y')}}</p>
+        <p>{{ partie.etat}}</p>
+        <p>{{ partie.tour.username}}
+    </div>
+    {% endfor %}
+</main>
+{% endblock %}
+
